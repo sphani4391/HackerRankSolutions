@@ -13,8 +13,7 @@ FROM
 JOIN
 (   /* max submissions by a hacker on any particular day */
     SELECT * FROM 
-    (   /* nested query to fetch the rank = 1 row */
-        SELECT submission_date, hacker_id, count(submission_id) as cnt, 
+    (   SELECT submission_date, hacker_id, count(submission_id) as cnt, 
         rank() over (partition by submission_date order by submission_date, count(submission_id) desc, hacker_id) rnk 
         FROM Submissions
         GROUP BY submission_date, hacker_id) a
