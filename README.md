@@ -1,3 +1,3 @@
 # HackerRankSolutions
 
-This repo contains the solutions to HackerRank problems
+This repo contains the solutions to HackerRank problems.
